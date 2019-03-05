@@ -7,10 +7,10 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'on' => env('QUERY_LOGGER_ON', false),
-    'env' => preg_split('/[\s,]+/', env('QUERY_LOGGER_ENV', 'local staging'), -1, PREG_SPLIT_NO_EMPTY),
+    'on'          => env('QUERY_LOGGER_ON', false),
+    'env'         => preg_split('/[\s,]+/', env('QUERY_LOGGER_ENV', 'local staging'), -1, PREG_SPLIT_NO_EMPTY),
     'query_param' => env('QUERY_LOGGER_PARAM', false),
-    'all' => env('QUERY_LOGGER_ALL', false),
+    'all'         => env('QUERY_LOGGER_ALL', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -27,11 +27,11 @@ return [
     */
 
     'log' => [
-        'on' => env('QUERY_LOGGER_EMIT_LOG', true),
-        'level' => env('QUERY_LOGGER_EMIT_LEVEL', 'debug'),
+        'on'      => env('QUERY_LOGGER_EMIT_LOG', true),
+        'level'   => env('QUERY_LOGGER_EMIT_LEVEL', 'debug'),
         'channel' => env('QUERY_LOGGER_EMIT_CHANNEL', 'default'),
-        'stack' => preg_split('/[\s,]+/', env('QUERY_LOGGER_EMIT_STACK', 'local staging'), -1, PREG_SPLIT_NO_EMPTY),
-        'prefix' => env('QUERY_LOGGER_EMIT_PREFIX', ''),
+        'stack'   => preg_split('/[\s,]+/', env('QUERY_LOGGER_EMIT_STACK', 'local staging'), -1, PREG_SPLIT_NO_EMPTY),
+        'prefix'  => env('QUERY_LOGGER_EMIT_PREFIX', ''),
     ],
 
     'dump_server' => env('QUERY_LOGGER_EMIT_DUMP_SERVER', false),

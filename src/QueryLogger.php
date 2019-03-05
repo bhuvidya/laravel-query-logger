@@ -26,7 +26,6 @@ class QueryLogger
     private $logging = false;
     private $log_cnt = 0;
 
-
     /**
      * Ctor.
      */
@@ -61,19 +60,19 @@ class QueryLogger
      */
     public function isActive()
     {
-        if (! $this->haveAtLeastOneEmitMethod()) {
+        if (!$this->haveAtLeastOneEmitMethod()) {
             return false;
         }
 
-        if ($this->query_param && !! request()->input($this->query_param)) {
+        if ($this->query_param && (bool) request()->input($this->query_param)) {
             return true;
         }
 
-        if (! $this->on) {
+        if (!$this->on) {
             return false;
         }
 
-        if (! $this->env || in_array(app()->environment(), $this->env)) {
+        if (!$this->env || in_array(app()->environment(), $this->env)) {
             return true;
         }
 
@@ -133,14 +132,15 @@ class QueryLogger
      * Log the database query.
      *
      * @param Illuminate\Database\Events\QueryExecuted $query
+     *
      * @return bool
      */
     public function log(QueryExecuted $query)
     {
-        if (! $this->active) {
+        if (!$this->active) {
             return false;
         }
-        if (! $this->all && ! $this->logging) {
+        if (!$this->all && !$this->logging) {
             return false;
         }
 
@@ -150,7 +150,7 @@ class QueryLogger
 
         $this->startLoggingMessage();
 
-        $sqlWithPlaceholders = str_replace([ '%', '?' ], [ '%%', '%s' ], $query->sql);
+        $sqlWithPlaceholders = str_replace(['%', '?'], ['%%', '%s'], $query->sql);
 
         $bindings = $query->connection->prepareBindings($query->bindings);
         $pdo = $query->connection->getPdo();
@@ -181,14 +181,15 @@ class QueryLogger
      * Log a simple string.
      *
      * @param string $str
+     *
      * @return bool
      */
     private function logString($str)
     {
-        if (! $this->active) {
+        if (!$this->active) {
             return false;
         }
-        if (! $this->all && ! $this->logging) {
+        if (!$this->all && !$this->logging) {
             return false;
         }
 
@@ -208,6 +209,7 @@ class QueryLogger
      * Format duration.
      *
      * @param float $seconds
+     *
      * @return string
      */
     private function formatDuration($seconds)
