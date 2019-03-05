@@ -2,12 +2,10 @@
 
 namespace BhuVidya\QueryLogger;
 
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\DB;
-use BhuVidya\QueryLogger\QueryLogger;
-use BhuVidya\QueryLogger\QueryLoggerFacade;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class QueryLoggerServiceProvider extends BaseServiceProvider
 {
