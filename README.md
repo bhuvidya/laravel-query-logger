@@ -15,15 +15,6 @@ Big kudos to github user `overtrue`, on whose work this package is based (https:
 Add `bhuvidya/laravel-query-logger` to your app:
 
     $ composer require "bhuvidya/laravel-query-logger"
-    
-
-**If you're using Laravel 5.5 or above, you don't have to edit `app/config/app.php`.**
-
-Otherwise, edit `app/config/app.php` and add the service provider:
-
-    'providers' => [
-        'BhuVidya\QueryLogger\QueryLoggerServiceProvider',
-    ]
 
 
 ## Configuration
