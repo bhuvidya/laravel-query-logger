@@ -6,6 +6,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/bhuvidya/laravel-query-logger/v/unstable?format=flat-square)](https://packagist.org/packages/bhuvidya/laravel-query-logger)
 
 
+**Note I have now switched the semver versioning for my Laravel packages to "match" the latest supported Laravel version.**
+
 Laravel Query Logger is a package to enable easy and flexible logging of all or a select range of database queries. It supports standard logging, and well as dump-server.
 
 Big kudos to github user `overtrue`, on whose work this package is based (https://github.com/overtrue/laravel-query-logger). I ended up doing so many changes that I thought it best to start my own package.
